@@ -1,0 +1,9 @@
+export const AUTH_SET = "AUTH_SET"
+export const AUTH_INITIALIZE = "AUTH_INITIALIZE"
+export const AUTH_REMOVE = "AUTH_REMOVE"
+
+export const CONFIG_SET = 'CONFIG_SET'
+export const CONFIG_INITIALIZE = 'CONFIG_INITIALIZE'
+export const CONFIG_REMOVE = 'CONFIG_REMOVE'
+
+export const NAV_TOGGLE = 'NAV_TOGGLE'
