@@ -1,6 +1,6 @@
-# productms
+# mestaurantms
 
-> Product Management System
+> Restaurant Management System
 
 ## Build Setup
 
