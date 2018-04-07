@@ -1,4 +1,4 @@
-# mestaurantms
+# restaurantms
 
 > Restaurant Management System
 
