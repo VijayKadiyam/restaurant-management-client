@@ -78,12 +78,11 @@
       items: [
         { icon: 'dashboard', text: 'Dashboard', url: '/dashboard' }, 
 
-        { heading: 'Sales' },
-        { icon: 'attach_money', text: 'Product Sales', url: '/sales' },
+        { heading: 'Orders' },
+        { icon: 'attach_money', text: 'Orders', url: '/orders' },
         
-        { heading: 'Products' },
-        { icon: 'local_mall', text: 'Product Categories', url: '/product-categories' },
-        { icon: 'add_shopping_cart', text: 'Products', url: '/products' },
+        { heading: 'Menu' },
+        { icon: 'add_shopping_cart', text: 'Menu Items', url: '/menu-items' },
         
         { heading: 'Stocks' },
         { icon: 'account_balance', text: 'Stock Categories', url: '/stock-categories' },
@@ -95,13 +94,14 @@
 
         { heading: 'My Profile' },
         { icon: 'people', text: 'Users', url: '/users' },
-        { icon: 'domain', text: 'Companies', url: '/companies' },
+        { icon: 'domain', text: 'My Restaurants', url: '/companies' },
         // { icon: 'person_pin', text: 'My Details', url: '/mydetails' },
         { icon: 'settings', text: 'Settings', url: '/settings' },
 
         { heading: 'Utilities' },
         { icon: 'camera_roll', text: 'User Roles', url: '/roles' }, 
         { icon: 'device_hub', text: 'Measurement Units', url: '/units' }, 
+        { icon: 'local_mall', text: 'Menu Categories', url: '/menu-categories' },
         { icon: 'money_off', text: 'Tax Percents', url: '/taxes' }, 
         { icon: 'money_off', text: 'Discount Percents', url: '/discounts' }, 
 

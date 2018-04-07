@@ -6,7 +6,7 @@
       <span class="title ml-3 mr-5"
         style="color: white;" 
       >
-          Product&nbsp;<span class="text">MS</span>
+          &nbsp;<span class="text">MS</span>
       </span>
     </a> 
 
@@ -14,7 +14,7 @@
       v-if="authStatus"
     >
       <h3>
-         Company: <b>{{ company.name }}</b>
+         Restaurant Name: <b>{{ company.name }}</b>
       </h3>
     </span>
     &nbsp;

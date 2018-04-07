@@ -6,9 +6,9 @@
         <v-card class="elevation-12"> 
 
           <v-card-title primary-title>
-            <h3 class="headline mb-0">Customers
+            <h3 class="headline mb-0">Menu Items
               <v-btn small color="primary"
-                to="/customers/create"
+                to="/menu-items/create"
               >Add New</v-btn>
             </h3>
             
@@ -29,32 +29,12 @@
             :search="search"
           >
             <template slot="items" slot-scope="props">
-              <td>{{ props.item.name }}</td>
-              <td class="text-xs-left">{{ props.item.email }}</td>
-              <td class="text-xs-left">
-                {{ props.item.contact1 }}
-                <br>
-                {{ props.item.contact2 }}
-              </td>
-              <td class="text-xs-left">
-                {{ props.item.address }}
-                <br>
-                State Code: {{ props.item.state_code }}
-              </td>
-              <td class="text-xs-left">{{ props.item.gstn_no }}</td>
-              <td class="text-xs-left">{{ props.item.pan_no }}</td>
-              <td class="text-xs-left">
-                {{ props.item.acc_name }}
-                <br>
-                {{ props.item.acc_no }}
-                <br>
-                {{ props.item.ifsc_code }}
-                <br>
-                {{ props.item.branch }}
-              </td>
+              <td>{{ props.item.name }}</td> 
+              <td class="text-xs-left">{{ props.item.menu_category }}</td> 
+              <td class="text-xs-left">{{ props.item.price }}</td> 
               <td class="justify-center layout px-0">
                 <v-btn icon class="mx-0"
-                  :to="`/customers/${props.item.id}/edit`"
+                  :to="`/menu-items/${props.item.id}/edit`"
                 >
                   <v-icon color="teal">edit</v-icon>
                 </v-btn> 
@@ -82,22 +62,28 @@
       form: new Form,
       search: '',
       headers: [
-        { text: 'Company Name', sortable:false, value: 'name' },
-        { text: 'Email ID', value: 'pan_no' },
-        { text: 'Contact No', value: 'gstn_no' },
-        { text: 'Address', value: 'address' },
-        { text: 'GST No', value: 'acc_no' },
-        { text: 'PAN No.', value: 'acc_no' },
-        { text: 'Account Details', value: 'acc_no' },
-        { text: 'Actions', value: 'name' }
+        { text: 'Menu item', sortable:false, value: 'name' },
+        { text: 'Menu Category', value: 'pan_no' }, 
+        { text: 'Price', value: 'pan_no' }
       ],
       items: []
     }),
 
     mounted() {
-      this.form.get('/api/customers')
+      this.form.get('/api/product-categories')
         .then(data => {
-          this.items = data.data;
+
+          data.data.forEach(item => { 
+            let menu_category_name = ''; 
+            this.form.get(`/api/menu-categories/${item.menu_category_id}`)
+            .then(data => {
+              menu_category_name = data.data.name; 
+              this.items.push({
+                id:item.id, name: item.name, price: item.price, menu_category: menu_category_name
+              })
+            }) 
+          }) 
+
         })
         .catch(errors => {
 

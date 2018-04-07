@@ -2,6 +2,14 @@ import Home from 'views/Home.vue'
 // auth
 import Login from 'views/auth/Login.vue'
 import Register from 'views/auth/Register.vue'
+// menu categories
+import MenuCategories from 'views/MenuCategories/Index.vue'
+import MenuCategoriesCreate from 'views/MenuCategories/Create.vue'
+import MenuCategoriesEdit from 'views/MenuCategories/Edit.vue'
+// menu items
+import MenuItems from 'views/MenuItems/Index.vue'
+import MenuItemsCreate from 'views/MenuItems/Create.vue'
+import MenuItemsEdit from 'views/MenuItems/Edit.vue'
 // stock categories
 import StockCategories from 'views/StockCategories/Index.vue'
 import StockCategoriesCreate from 'views/StockCategories/Create.vue'
@@ -52,6 +60,14 @@ const routes = [
   // auth
   { path: '/login', component: Login },
   { path: '/register', component: Register },
+  // menu categories
+  { path: '/menu-categories', component: MenuCategories },
+  { path: '/menu-categories/create', component: MenuCategoriesCreate },
+  { path: '/menu-categories/:menu_category_id/edit', component: MenuCategoriesEdit },
+  // menu items
+  { path: '/menu-items', component: MenuItems },
+  { path: '/menu-items/create', component: MenuItemsCreate },
+  { path: '/menu-items/:menu_item_id/edit', component: MenuItemsEdit },
   // stock categories
   { path: '/stock-categories', component: StockCategories },
   { path: '/stock-categories/create', component: StockCategoriesCreate },
